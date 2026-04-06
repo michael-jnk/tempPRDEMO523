@@ -44,7 +44,7 @@ export default function App() {
       </div>
 
       <ul className="todo-list">
-        {todos.map(todo => (
+        {[...todos].sort((a, b) => a.completed - b.completed).map(todo => (
           <TodoItem
             key={todo.id}
             todo={todo}
