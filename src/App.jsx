@@ -65,7 +65,8 @@ export default function App() {
       </div>
 
       <ul className="todo-list">
-        {visibleTodos.map(todo => (
+        {[...visibleTodos].sort((a, b) => a.completed - b.completed).map(todo => (
+
           <TodoItem
             key={todo.id}
             todo={todo}
